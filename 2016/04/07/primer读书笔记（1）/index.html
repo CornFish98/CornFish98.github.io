@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>primer读书笔记（1） | CornFish</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="CornFish">
+    <meta name="author" content="ZKY">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="CornFish" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="http://cornfish98.com" target="_BLANK" class="animsition-link">MyBlog</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/C/" class="animsition-link">C++<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Computer-Networking/" class="animsition-link">Computer Networking<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://www.cornfish98.com/" class="animsition-link">ZKY</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">CornFish</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>Welcome to Cornfish's blog!</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-07T15:57:51.000Z" itemprop="datePublished">
+          2016-04-07
+      </time>
+    
+</span>
+                <h1>primer读书笔记（1）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="1-变量和基本类型"><a href="#1-变量和基本类型" class="headerlink" title="1. 变量和基本类型"></a>1. 变量和基本类型</h3><h4 id="1-1-基本类型"><a href="#1-1-基本类型" class="headerlink" title="1.1 基本类型"></a>1.1 基本类型</h4><p>C++的内置类型包括算数类型和空类型，其中算数类型分为整型和浮点型。C++标准规定了每种类型的最小尺寸，但同时允许编译器赋予这些类型更大的尺寸。</p>
+<p>一个char的大小和一个机器字节一样（8位），<code>wchar_t</code>可存放机器最大拓展字符集中的任意字符，<code>char16_t</code>和<code>char32_t</code>在Unicode字符集中使用。字符型被分为三种，char、sighed char、unsigned char。字符只分为带符号和无符号的，至于char类型到底带不带符号与编译器有关。</p>
+<p>一个int（最少16位）至少和一个short一样大，一个long至少和一个int一样大，一个long long至少和一个long一样大，这是C++11中新定义的类型。（对于大部分编译器，long通常和int一样大，因此当数值超过int时，采用long long）</p>
+<p>对于浮点型，由于大部分机器1个字（32位）为4个字节，因此通常float以1个字表示，double以2个字表示。（float和double分别有7和16个有效位）</p>
+<p>当赋给带符号类型一个超出它表示范围的数时，结果是未定义的。编程时，不应假设某种类型的大小（同一种类型在不同机器可能有不同的大小），否则写出的程序是不可移植的（nonportable）。</p>
+<p>每个字面值常量都对应一种数据类型。short没有对应的字面值，十进制字面值的类型是int、long、long long中能容纳它的最小者，八进制或十六进制的字面值类型是int、unsigned int、long、unsigned long、long long和unsigned long long中能容纳它的最小者。</p>
+<p>注意区分字符字面值和字符串字面值，字符串字面值的类型实际上是由常量字符构成的数组，并且编译器会在它末尾添加一个‘\0’。</p>
+<p>C++规定了以反斜线作为开始的转义序列（如\n、\），此外还可以使用泛化的转义序列，其形式是\x紧跟一个或多个十六进制数，或\后紧跟1-3个八进制数（超过3个则只有前3个与\构成转义序列），为了防止\x开头的转义序列越界（即超过char型的最大表示范围），通常在它前面加前缀（u、U、L、u8等）一起使用。</p>
+<h4 id="1-2-变量"><a href="#1-2-变量" class="headerlink" title="1.2 变量"></a>1.2 变量</h4><p>注意区分初始化和赋值的区别，初始化是在创建变量时赋予其一个初始值，而赋值的含义则是把当前值擦除，并以一个新值来代替。在C++11中，用花括号初始化变量得到了全面的应用，因此对一个变量进行初始化时，可以使用=进行初始化，也可以直接使用初始化列表，但使用初始化列表时必须赋予合适类型的值，初始化列表不支持隐式转换（例如不能在初始化列表中将一个double值赋给一个int型变量）。</p>
+<p>如果定义变量时没有赋初值，此时，对于内置类型，如果变量定义于函数体外，则被默认初始化为0，如果该内置类型定义于函数体内，则将不被默认初始化（即其值时未定义的）。对于类类型，每个类各自决定其初始化对象的方式，是否允许不经初始化就定义对象也由类自己决定（如果类允许这种行为，它将决定对象的初值到底是什么）。</p>
+<p>为了支持分离式编译，C++对变量的声明和定义进行了区分，声明使得名字为程序所知（一个文件如果想使用别处定义的变量则必须包含对该变量的声明），而定义负责创建与名字相关的实体（申请存储空间，并可能赋一个初始值）。在变量名前加上extern关键字来声明一个变量（注意，如果声明的同时赋予了初始值，此时就不再是声明，而属于定义了，也就是说extern关键字被忽略了）。变量可以被声明多次，但只能被定义一次。</p>
+<p>变量的命名规范和作用域次数略去（注意掌握作用域运算符”::”）.</p>
+<h4 id="1-3-复合类型"><a href="#1-3-复合类型" class="headerlink" title="1.3 复合类型"></a>1.3 复合类型</h4><p>复合类型包括引用和指针。</p>
+<p>引用在声明的同时也必须被初始化，并且一旦初始化后，它就和它的初始值绑定在一起并且再无法改变。引用即别名，它并非对象，它只是为一个已经存在的对象所起的另外一个名字。由于引用不是对象，因此无法定义引用的引用。</p>
+<p>指针本身是一个对象，允许对指针拷贝和赋值，一个指针在它的声明周期内可以先后指向不同的对象。指针无需在定义时赋初值，和其他内置类型一样，如果在块作用域内定义的指针没有被初始化，它将拥有一个不确定的值（未定义的值）。由于指针是对象，因此存在指针的指针和指针的引用。</p>
+<p>可以用字面值<code>nullptr</code>初始化指针来得到空指针。nullptr是C++11中新定义的一种特殊类型的字面值，它可以被转化成任意其他指针类型。在旧标准中，通常使用预处理变量NULL（定义在头文件cstdlib中）生成空指针。</p>
+<p>void<em> 指针是一种特殊的指针类型，可用于存放任意类型对象的地址，它只能用于和其它指针比较或赋值给另外一个指针，不能通过解引用运算符 </em> 来访问它所指向的对象（因为并不知道类型）。</p>
+<p>注意指针的定义：<code>int** p1, *p2, p3;</code>//这行代码中，p1是int型指针的指针，p2是int型指针，p3是int型的数。</p>
+<h4 id="1-4-const和constexpr"><a href="#1-4-const和constexpr" class="headerlink" title="1.4 const和constexpr"></a>1.4 const和constexpr</h4><p>在变量类型前加上const关键字表示定义了一个不能被修改的常量，const对象在定义时必须被初始化，注意这里初始值可以是任意复杂的表达式。我们可以用一个非常量初始化一个const常量，这是因为常量特征仅在执行改变它的操作发生时才会发生作用，这里再次说明了初始化不同于赋值（赋值会改变原先的值）。</p>
+<p>常量引用是对常量的引用（对const的引用），通常引用的类型必须与其所引用的对象类型一致，但在初始化常量引用时允许用任意表达式作为初始值，只要该表达式的结果可以转换为引用的类型即可（允许为一个常量引用绑定非常量对象、字面值，甚至一个表达式）。注意，对const的引用可能引用一个并非const的对象，只是我们不能通过对const的引用修改该对象的值。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> ci =<span class="number">1024</span>；</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> &amp;r1 = ci; <span class="comment">//常量引用</span></span><br></pre></td></tr></table></figure></p>
+<p>注意区分指向常量的指针、常量指针和指向常量的常量指针。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> *cptr = &amp;pi;  <span class="comment">//指向常量的指针</span></span><br><span class="line"><span class="keyword">double</span> num = <span class="number">1.0</span>;</span><br><span class="line"><span class="keyword">double</span> *<span class="keyword">const</span> ptr = &amp;num;  <span class="comment">//常量指针</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> *<span class="keyword">const</span> pip = &amp;pi;  <span class="comment">//指向常量的常量指针</span></span><br></pre></td></tr></table></figure></p>
+<p>指向常量的指针强调的是：这个指针不能用于改变其所指对象的值。要想存放常量对象的地址，必须使用指向常量的指针。通常，指针的类型必须与其所指对象的类型一致，但是，指向常量的指针是个例外，C++并不规定指向常量的指针所指的对象必须是一个常量，所谓指向常量的指针仅仅要求不能通过该指针改变对象的值（如果这个对象不是常量，是可以通过其他途径改变的）。</p>
+<p>这里有必要再补充一点，很多人对上面的定义存在困惑，认为指向常量的指针指向的就应该是常量，产生这样的观点其实并不奇怪，事实上，如果我们站在指向常量的指针的角度看这个的话，答案确实如此，也就是说，指向常量的指针自己认为自己指向的对象是一个常量，因此它“自觉地”不去修改它所指向的这个对象。但如果站在旁观者的角度，这个对象（如果确实不是常量的话）是可以通过其他方式修改的。这样的做法并不奇怪，而且是有用意的，而且我们也遇到过类似的用法（考虑我们定义一个int型常量const int val，在对val初始化时，并非必须使用常量才能初始化它，我们也可以使用普通的int型变量初始化它）。<br>那么究竟为什么要做这样的定义呢？考虑下面的函数：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *a = &amp;num;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> num2 = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *ca = &amp;num2;</span><br><span class="line"><span class="keyword">int</span> function1（<span class="keyword">int</span> *p）&#123;</span><br><span class="line">	<span class="comment">//do something</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="keyword">int</span> function2（<span class="keyword">const</span> <span class="keyword">int</span> *p）&#123;</span><br><span class="line">	<span class="comment">//do something</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在假设如这些存有疑惑的人所愿，我们规定指向常量的指针只能指向常量，看看会发生什么，根据此规定，我们定义并初始化了指针ca。首先，我们无法执行下面的调用：<code>function1(ca);</code>因为<code>int *p</code>是一个普通指针，我们不能将一个指向int型常量的指针赋给一个普通的int型指针（如果可以，那么就可以通过p修改ca所指向的常量了，这是不允许的），因此，为了能够使用ca作参数，我们必须定义function2，但是，类似<code>function2(a)</code>这样的调用也是非法的，因为我们规定了指向常量的指针只能指向常量，而a指向的不是常量。也就是说，规定指向常量的指针只能指向常量会使得函数调用变得复杂，原本一个函数可以搞定的事情现在却需要定义两个，而C++中所作出的规定则不会出现这种情况，我们只需要function2就足够了。</p>
+<p>常量指针强调的是：该指针本事是一个常量。常量指针一旦初始化完成，则它的值（即存放在指针里的地址）就不能再改变了，即不能改变指针本身，但可以改变指针指向的值。（指针本身是一个常量并不意味着不能通过指针修改其所指对象的值）</p>
+<p>指向常量的常量指针是两者的结合。</p>
+<p><strong>顶层const和底层const：</strong><br>指针本身是一个对象，同时它又可以指向另外一个对象，因此，指针本身是不是一个常量和指针所指的对象是不是一个常量是两个相互独立的问题。我们用顶层const表示一个对象其本身是一个常量，对于指针而言，即指针本身是一个常量。用底层const表示指针所指的对象是一个常量。（注意，顶层const不只描述指针，还可以描述任何对象，而底层const则通常只用于描述指针和引用等复合类型的基本类型）</p>
+<p>之所以要讨论顶层const和底层const的区别，是因为在执行对象的拷贝操作时，顶层const不会产生影响，但底层const会。只有当拷入和拷出的对象具有相同的底层const时（或两个对象的数据类型必须能够转换），才能执行拷贝操作。</p>
+<p>常量表达式是指值不会改变并且在编译过程就能得到计算结果的表达式。（字面值属于常量表达式，用常量表达式初始化的const对象也是常量表达式）C++11中允许将变量声明为<code>constexpr</code>类型以便由编译器来验证变量的值是不是一个常量表达式。声明为constexpr的变量一定是一个常量（这一点非常重要），而且必须使用常量表达式初始化。</p>
+<p>尽管指针和引用都可以定义成constexpr，但他们的初始值却受到严格限制，一个constexpr指针的初始值必须是nullptr或0，或者是某个存储于固定地址中的对象。（即constexpr类型的指针一定是常量指针）对比下面的代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> i = <span class="number">1</span>; <span class="comment">//i的类型是整形常量 相当于const int i = 1；</span></span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keyword">int</span> *p1 = &amp;i； <span class="comment">//p1是常量指针，指向整型常量i</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="keyword">const</span> p2 = &amp;i;  <span class="comment">//p2是常量指针，指向整型常量i</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="1-5-typedef和using"><a href="#1-5-typedef和using" class="headerlink" title="1.5 typedef和using"></a>1.5 typedef和using</h4><p>类型别名是一个名字，它是某种类型的同义词。C++中可以使用typedef或using定义类型别名。用法如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> base,*p; <span class="comment">//base是double的同义词，p是double*的同义词</span></span><br><span class="line"><span class="keyword">using</span> base = <span class="keyword">double</span>; <span class="comment">//base是double的同义词</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> *pstring;  <span class="comment">//pstring是char*的别名</span></span><br><span class="line"><span class="keyword">const</span> pstring cstr = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
+<p>上面的最后一行代码容易被错误的理解为：<code>const char *cstr = 0;</code>事实上，它真正的含义是：<code>char *const cstr = 0;</code><br>我们来分析<code>const pstring cstr = 0;</code> 首先要说明的是，const是对给定类型的修饰，这里const修饰的是pstring，而pstring的类型是指针，因此const pstring是指向char的常量指针，而非指向常量字符的指针。</p>
+<h4 id="1-6-auto与decltype"><a href="#1-6-auto与decltype" class="headerlink" title="1.6 auto与decltype"></a>1.6 auto与decltype</h4><p>C++11引入auto类型说明符，用它能够让编译器替我们去分析表达式所属的类型，auto定义的变量必须有初始值。<br>编译器推断出来的auto类型有时和初始值的类型并不完全一样，编译器会适当地改变结果类型使其更符合初始化规则：</p>
+<blockquote>
+<p>首先，由于使用引用其实使用的是引用的对象，因此当auto一个引用时，编译器将以引用对象的类型作为auto的类型。如：<code>int i = 0， &amp;r= i;  auto a = r;</code>此时编译器会推断a的类型为int，而非一个int型的引用（关于这一点，decltype恰好相反，它会将类型推断为引用）<br>其次，auto一般会忽略顶层const，保留底层const，如果希望推断的auto类型是一个顶层const，需要明确指出，如：<code>const int ci = 0; const auto f = ci;</code> 此时ci的推演类型是int，f的推演类型是const int。</p>
+</blockquote>
+<p>C++11中还引入了第二种类型说明符<code>decltype</code>，其作用是选择并返回操作数的数据类型，在此过程中，编译器分析表达式并得到它的类型，但是却不计算表达式的值。decltype处理顶层const和引用的方式与auto不同，如果decltype使用的表达式是一个变量，则decltype返回该变量的类型（包括顶层const和引用在内），下面的例子说明了这一点：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> *p = &amp;i;</span><br><span class="line"><span class="keyword">decltype</span>(i) d;  <span class="comment">//d的类型是int</span></span><br><span class="line"><span class="keyword">decltype</span>((i)) e;  <span class="comment">//e的类型是int&amp;，对i加了括号就成为了一个表达式</span></span><br><span class="line"><span class="keyword">decltype</span>（*p）f;  <span class="comment">//f的类型是int&amp;，如果表达式内容是解引用操作，则得到引用类型</span></span><br></pre></td></tr></table></figure></p>
+<p>在这里，decltype((variable))的结果永远是引用，而单层括号只有当variable本身就是一个引用时结果才是引用。</p>
+<h4 id="1-7-头文件保护符"><a href="#1-7-头文件保护符" class="headerlink" title="1.7 头文件保护符"></a>1.7 头文件保护符</h4><p>确保头文件多次包含仍能安全工作的常用技术是预处理器（preprocessor），C++中经常会用到的一项预处理功能是头文件保护符。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SALES_DATA_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SALES_DATA_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> Sales_data &#123;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">string</span> bookNo;</span><br><span class="line">	<span class="keyword">unsigned</span> units_sold = <span class="number">0</span>;  <span class="comment">//C++11规定，可以给数据成员提供类内初始值</span></span><br><span class="line">	<span class="keyword">double</span> revenue = <span class="number">0.0</span>;</span><br><span class="line">&#125;;  <span class="comment">//这里分号必不可少，因为类体后面可以紧跟变量名以表示对该类型对象的定义</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中，SALES_DATA_H称为预处理变量，头文件保护符依赖于预处理变量，预处理变量有两种状态，定义和未定义。<code>#define</code>指令把一个名字设定为预处理变量，<code>#ifdef</code>和<code>#ifndef</code>检查指定的预处理变量是否已经定义，<code>#ifdef</code>当且仅当变量已定义时为真，<code>#ifndef</code>当且仅当变量未定义时为真。一旦结果为真，则执行后序操作直到<code>#endif</code>指令为止。上面的代码使用这些功能有效的防止了重复包含的发生。</p>
+<p>由于整个程序中的预处理变量包括头文件保护符必须唯一，因此我们通常都把头文件名全部大写作为预处理变量，以确保其唯一性。（注意，头文件中不应当包含命名空间的using声明）</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/04/07/Transport Layer/">
+        传输层（Transport Layer） →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/04/07/primer读书笔记（1）/" data-title="primer读书笔记（1）" data-url="https://github.com/CornFish98/CornFish98.github.io.git/2016/04/07/primer读书笔记（1）/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ZKY. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
