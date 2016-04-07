@@ -241,7 +241,7 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="传输层（Transport-Layer）"><a href="#传输层（Transport-Layer）" class="headerlink" title="传输层（Transport Layer）"></a>传输层（Transport Layer）</h1><p>[TOC]</p>
+      		<p>[TOC]</p>
 <h2 id="1-传输层概述"><a href="#1-传输层概述" class="headerlink" title="1 传输层概述"></a>1 传输层概述</h2><p>传输层位于应用层和网络层之间，其关键功能是将网络层在<strong>两个端系统之间</strong>的交付拓展到运行在两个不同端系统上的<strong>应用层进程之间</strong>的交付服务。相比网络层协议为主机之间提供<code>逻辑通信</code>，传输层协议为运行在不同主机上的应用进程之间提供<code>逻辑通信</code>，传输层协议是在端系统中实现，而不是在路由器中实现，传输层传送的是<strong>报文段（segment）</strong>。</p>
 <p><strong>一方面</strong>，传输层协议提供的服务受制于网络层协议的服务模型：即如果网络层协议无法为主机之间发送的传输层报文段提供时延或带宽的保证，则传输层协议也就无法为进程之间发送的应用层报文提供时延或带宽保证。<strong>另一方面</strong>，传输层又可提供网络层协议无法提供的服务，如保密性，可靠性。</p>
 <p>传输层协议将主机间交付扩展到进程间交付的行为称为<strong>传输层多路复用（transport-layer multiplexing）</strong>与<strong>多路分解（demultiplexing）</strong>，最有名的传输层协议是TCP和UDP。他们的行为有着鲜明的`两极化``，<strong>在一个极端</strong>，UDP仅向通信进程提供多路复用/分解的服务，而不提供其他任何服务（因此它非常简单），<strong>在另一个极端</strong>，TCP向通信进程提供可靠交付、时延保证、带宽保证等一系列服务。具体而言，TCP通过使用流量控制、序号、确认和定时器确保数据正确、按序的从发送进程交付给接受进程，即提供<strong>可靠数据传输（reliable data transfer）</strong>，同时TCP还提供<strong>拥塞控制（congestion control）</strong>。</p>
