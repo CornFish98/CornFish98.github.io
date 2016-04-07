@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>TransportLayer | CornFish</title>
+  <title>传输层（Transport Layer） | CornFish</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -237,24 +237,21 @@
     
     
 </span>
-                <h1>TransportLayer</h1>
+                <h1>传输层（Transport Layer）</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>#传输层（Transport Layer）</p>
-<hr>
-<p>[TOC]</p>
-<p>##1 传输层概述<br>传输层位于应用层和网络层之间，其关键功能是将网络层在<strong>两个端系统之间</strong>的交付拓展到运行在两个不同端系统上的<strong>应用层进程之间</strong>的交付服务。相比网络层协议为主机之间提供<code>逻辑通信</code>，传输层协议为运行在不同主机上的应用进程之间提供<code>逻辑通信</code>，传输层协议是在端系统中实现，而不是在路由器中实现，传输层传送的是<strong>报文段（segment）</strong>。</p>
+      		<h1 id="传输层（Transport-Layer）"><a href="#传输层（Transport-Layer）" class="headerlink" title="传输层（Transport Layer）"></a>传输层（Transport Layer）</h1><p>[TOC]</p>
+<h2 id="1-传输层概述"><a href="#1-传输层概述" class="headerlink" title="1 传输层概述"></a>1 传输层概述</h2><p>传输层位于应用层和网络层之间，其关键功能是将网络层在<strong>两个端系统之间</strong>的交付拓展到运行在两个不同端系统上的<strong>应用层进程之间</strong>的交付服务。相比网络层协议为主机之间提供<code>逻辑通信</code>，传输层协议为运行在不同主机上的应用进程之间提供<code>逻辑通信</code>，传输层协议是在端系统中实现，而不是在路由器中实现，传输层传送的是<strong>报文段（segment）</strong>。</p>
 <p><strong>一方面</strong>，传输层协议提供的服务受制于网络层协议的服务模型：即如果网络层协议无法为主机之间发送的传输层报文段提供时延或带宽的保证，则传输层协议也就无法为进程之间发送的应用层报文提供时延或带宽保证。<strong>另一方面</strong>，传输层又可提供网络层协议无法提供的服务，如保密性，可靠性。</p>
 <p>传输层协议将主机间交付扩展到进程间交付的行为称为<strong>传输层多路复用（transport-layer multiplexing）</strong>与<strong>多路分解（demultiplexing）</strong>，最有名的传输层协议是TCP和UDP。他们的行为有着鲜明的`两极化``，<strong>在一个极端</strong>，UDP仅向通信进程提供多路复用/分解的服务，而不提供其他任何服务（因此它非常简单），<strong>在另一个极端</strong>，TCP向通信进程提供可靠交付、时延保证、带宽保证等一系列服务。具体而言，TCP通过使用流量控制、序号、确认和定时器确保数据正确、按序的从发送进程交付给接受进程，即提供<strong>可靠数据传输（reliable data transfer）</strong>，同时TCP还提供<strong>拥塞控制（congestion control）</strong>。</p>
-<p>###1.1 多路复用/分解<br>在阐述这个问题之前，我们先来简单谈一下不同主机应用程序<strong>进程间通信</strong>的问题。我们知道不同应用程序之间的交互实际上是进程间的交互，在两个不同端系统上的进程，通过跨越计算机网络交换报文而相互通信。在这个过程中，通信间进程通过一个称为<strong>套接字（socket）</strong>的软件接口向网络发送和接收报文，套接字是同一台主机内应用层与传输层之间的接口（因此套接字也称为应用程序和网络之间的API）。在网络中，主机地址由IP地址标识，一个发送进程要将报文送往另一台主机的接收进程，除了要知道主机IP地址外，还要知道接收进程的接收套接字，这个接收套接字对应一个目的地<strong>端口号（port number）</strong>。</p>
+<h3 id="1-1-多路复用-分解"><a href="#1-1-多路复用-分解" class="headerlink" title="1.1 多路复用/分解"></a>1.1 多路复用/分解</h3><p>在阐述这个问题之前，我们先来简单谈一下不同主机应用程序<strong>进程间通信</strong>的问题。我们知道不同应用程序之间的交互实际上是进程间的交互，在两个不同端系统上的进程，通过跨越计算机网络交换报文而相互通信。在这个过程中，通信间进程通过一个称为<strong>套接字（socket）</strong>的软件接口向网络发送和接收报文，套接字是同一台主机内应用层与传输层之间的接口（因此套接字也称为应用程序和网络之间的API）。在网络中，主机地址由IP地址标识，一个发送进程要将报文送往另一台主机的接收进程，除了要知道主机IP地址外，还要知道接收进程的接收套接字，这个接收套接字对应一个目的地<strong>端口号（port number）</strong>。</p>
 <p>对于传输层传输的每个报文，其中都有一些字段，传输层检查这个字段，进而把报文定向到正确的接收套接字。将运输层报文段中的数据交付到正确的套接字的工作就称为<code>多路分解</code>。与之对应，源主机从不同套接字收集数据块，并为每个数据块封装上首部信息（用于以后分解）从而生成报文段，并将报文段传递到网络层的工作称为<code>多路复用</code>。</p>
 <p>实际中，这些特殊的字段是<strong>源端口号</strong>字段和<strong>目的端口号</strong>字段，端口号是一个16bit的数，大小在0—65535之间，其中0—1023范围称为<strong>周知端口号（well-known port number）</strong>，保留给诸如HTTP（80端口）、FTP（控制：21端口，数据：20端口）、telnet（23端口），SMTP（25端口），POP3（110端口），NNTP（119端口）等周知的应用层协议使用。查看周知端口号可前往：<a href="www.iana.org">www.iana.org</a></p>
 <p>下这张图给出了一个多路复用和分解的例子：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-1.png" alt="1"></p>
-<p>####1.1.1 无连接的多路复用/分解<br>UDP采用无连接的多路复用与分解，一个UDP套接字是由一个二元组（源端口号，目的端口号）来标识的，该二元组包含一个目的IP地址和目的端口号，两个UDP报文只要有相同的IP地址和目的端口号，那么这两个报文就将通过相同的目的套接字被定向到相同的目的进程。在下面的例子中，主机A中的一个进程具有UDP端口号19157，它要发送一个应用程序数据块给位于主机B的另一进程，该进程具有UDP端口号46428。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-2.png" alt="2"></p>
-<p>####1.1.2 有连接的多路复用/分解<br>TCP采用有连接的多路复用与分解，一个TCP套接字是由一个四元组（源IP地址，源端口号，目的IP地址，目的端口号）来标识的，与UDP不同，即使两个TCP报文有相同的目的IP地址和目的端口号，如果它们源IP地址或源端口号不同，就会被定向到两个不同的套接字。例子如下：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-3.png" alt="3"></p>
-<p>##2 UDP</p>
-<p>UDP（User Datagram Protocol）指用户数据报协议，简单来讲，UDP无非就是对网络层协议增加了多路复用/分解功能而已（还有少量差错检测）。</p>
+<h4 id="1-1-1-无连接的多路复用-分解"><a href="#1-1-1-无连接的多路复用-分解" class="headerlink" title="1.1.1 无连接的多路复用/分解"></a>1.1.1 无连接的多路复用/分解</h4><p>UDP采用无连接的多路复用与分解，一个UDP套接字是由一个二元组（源端口号，目的端口号）来标识的，该二元组包含一个目的IP地址和目的端口号，两个UDP报文只要有相同的IP地址和目的端口号，那么这两个报文就将通过相同的目的套接字被定向到相同的目的进程。在下面的例子中，主机A中的一个进程具有UDP端口号19157，它要发送一个应用程序数据块给位于主机B的另一进程，该进程具有UDP端口号46428。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-2.png" alt="2"></p>
+<h4 id="1-1-2-有连接的多路复用-分解"><a href="#1-1-2-有连接的多路复用-分解" class="headerlink" title="1.1.2 有连接的多路复用/分解"></a>1.1.2 有连接的多路复用/分解</h4><p>TCP采用有连接的多路复用与分解，一个TCP套接字是由一个四元组（源IP地址，源端口号，目的IP地址，目的端口号）来标识的，与UDP不同，即使两个TCP报文有相同的目的IP地址和目的端口号，如果它们源IP地址或源端口号不同，就会被定向到两个不同的套接字。例子如下：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-3.png" alt="3"></p>
+<h2 id="2-UDP"><a href="#2-UDP" class="headerlink" title="2 UDP"></a>2 UDP</h2><p>UDP（User Datagram Protocol）指用户数据报协议，简单来讲，UDP无非就是对网络层协议增加了多路复用/分解功能而已（还有少量差错检测）。</p>
 <p>使用UDP时，在发送报文之前，发送方和接收方的运输层实体间没有握手，因此UDP被称为<strong>无连接的</strong>。UDP无法提供可靠的数据传输，它有以下特点：</p>
 <blockquote>
 <ul>
@@ -265,7 +262,7 @@
 <li>由于UDP缺乏拥塞控制机制，因此发生拥塞时可能导致发送方和接收方的高丢包率，并会挤垮TCP会话。</li>
 </ul>
 </blockquote>
-<p>###2.1 UDP报文段结构<br>UDP定义在RFC 768中，如下图所示，UDP首部只有四个字段（源端口号，目的端口号，长度，检验和），每个字段由两个字节组成。长度字段指示了UDP报文段中的字节数（首部+数据），检验和提供了差错检验功能。</p>
+<h3 id="2-1-UDP报文段结构"><a href="#2-1-UDP报文段结构" class="headerlink" title="2.1 UDP报文段结构"></a>2.1 UDP报文段结构</h3><p>UDP定义在RFC 768中，如下图所示，UDP首部只有四个字段（源端口号，目的端口号，长度，检验和），每个字段由两个字节组成。长度字段指示了UDP报文段中的字节数（首部+数据），检验和提供了差错检验功能。</p>
 <p><em>Request For Comments（RFC），是一系列以编号排定的文件。文件收集了有关互联网相关信息，以及UNIX和互联网社区的软件文件。目前RFC文件是由Internet Society（ISOC）赞助发行。基本的互联网通信协议都有在RFC文件内详细说明。</em><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-4.png" alt="4"><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-32.png" alt="32"></p>
 <blockquote>
 <ol>
@@ -275,7 +272,7 @@
 <li>校验和：一个16位补码，是由伪IP头，UDP头（由于校验和字段本身就在UDP头部中，因此使用UDP头计算时先假设校验和为0），UDP数据形成的。其中，伪IP头的协议号为17。如果要求接收方忽略校验和，发送方不计算校验和，直接把校验和设置为0。对伪IP头的说明见下一小节。</li>
 </ol>
 </blockquote>
-<p>###2.2 UDP检验和<br>根据RFC 768，<strong>检验和的计算方法如下：</strong><br>图中给出了伪IP头的格式，注意，<code>TCP与UDP计算检验和的方式是一样的。</code><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-0.png" alt="0"></p>
+<h3 id="2-2-UDP检验和"><a href="#2-2-UDP检验和" class="headerlink" title="2.2 UDP检验和"></a>2.2 UDP检验和</h3><p>根据RFC 768，<strong>检验和的计算方法如下：</strong><br>图中给出了伪IP头的格式，注意，<code>TCP与UDP计算检验和的方式是一样的。</code><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-0.png" alt="0"></p>
 <blockquote>
 <p>发送方<code>对伪IP头，UDP头（校验和为0），UDP数据的所有16bits字的和进行反码运算，求和时遇到的所有溢出都被回卷</code>（即忽略最高位的进位溢出），得到的结果放在检验和字段。在接收方，将全部字段之和与检验和字段相加，如果没有引入差错，则这个结果应当是全1的，如果有任何&gt;一位为0，则说明传输出现了差错。（参见下图）<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-5.png" alt="5"></p>
 </blockquote>
@@ -286,9 +283,7 @@
 <li>将受损的报文段交给应用程序并给出警告。</li>
 </ol>
 </blockquote>
-<p>##3 可靠数据传输原理</p>
-<p>###3.1 可靠数据传输</p>
-<p>借助于可靠信道，传输数据比特不会受到损坏或丢失，而且所有数据都是按其顺序进行交付，我们将实现这种服务的抽象称为可靠数据传输协议（reliable data transfer protocol）（注意：可靠数据传输协议的下层协议也许是不可靠的），下面两图给出了一个可靠数据传输协议所提供的服务及其概要实现，其中rdt表示可靠数据传输协议，理解这两张图是理解TCP的基础。</p>
+<h2 id="3-可靠数据传输原理"><a href="#3-可靠数据传输原理" class="headerlink" title="3 可靠数据传输原理"></a>3 可靠数据传输原理</h2><h3 id="3-1-可靠数据传输"><a href="#3-1-可靠数据传输" class="headerlink" title="3.1 可靠数据传输"></a>3.1 可靠数据传输</h3><p>借助于可靠信道，传输数据比特不会受到损坏或丢失，而且所有数据都是按其顺序进行交付，我们将实现这种服务的抽象称为可靠数据传输协议（reliable data transfer protocol）（注意：可靠数据传输协议的下层协议也许是不可靠的），下面两图给出了一个可靠数据传输协议所提供的服务及其概要实现，其中rdt表示可靠数据传输协议，理解这两张图是理解TCP的基础。</p>
 <p><strong>可靠数据传输协议提供的服务和实现：</strong><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-12-100.png" alt="100"></p>
 <p><strong>详细说明：</strong><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-图片2.png" alt="图片2"></p>
 <p>接下来我们逐步讨论实现可靠数据传输协议的几个要点，在讨论过程中，我们会用到<strong>FSM</strong>（有限状态机，finite-state machine），其中初始状态用虚线指出，箭头代表从一个状态变化到另一个状态，每个箭头旁会附有引起变迁的事件（横线上方）及事件发生时所采取的行动（横线下方），符号\^表示空集（横线上方表示条件为空/横线下方表示所采取的行动为空）。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-11.png" alt="11"></p>
@@ -312,10 +307,8 @@
 <p><strong>rdt3.0:假设经有比特差错且会丢包的信道传输</strong>，这是真实网络的情况，为了能处理丢包，我们必须解决以下两个问题：如何检测丢包及发生丢包后该做些什么。第二个问题的答案是显然的，因为其实在引入<code>检验和</code>、<code>序号</code>、<code>肯定和否定分组</code>及<code>重传</code>机制后，只要能检测到丢包，我们就可以通过通过重传解决这个问题。<br>解决第一个问题的办法是引入一个定时器，即选定一个合适的时间值，以判定可能发生了丢包（虽然不能确保是丢包），如果在这个时间内没有收到ACK，则重传该分组。（注意：如果一个分组经历了一个特别大的时延，即使该数据分组及其ACK都没有丢失，发送方也会重传该分组，这在信道中引入了<strong>冗余数据分组</strong>，但正如rdt2.0中讨论的那样，我们已有的机制可以处理这种冗余，即：可以判断收到的分组是新的还是一次重传。）</p>
 </blockquote>
 <p><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-16.png" alt="16"></p>
-<p>###3.2 ARQ</p>
-<p>如果在协议中，发送方在准备下一个数据项目之前先等待一个肯定的确认，则这样的协议称为ARQ（Automatic Repeat Request，自动重传请求协议）。自动重传请求（Automatic Repeat Request），通过接收方请求发送方重传出错的数据报文来恢复出错的报文，是通信中用于处理信道所带来差错的方法之一，传统自动重传请求分成为三种，即<strong>停等协议</strong>(stop-and-wait），<strong>回退n帧</strong>（go-back-n），以及<strong>选择性重传</strong>（selective repeat）。后两种协议是滑动窗口技术与请求重发技术的结合，由于窗口尺寸开到足够大时，帧在线路上可以连续地流动，因此又称其为流水线ARQ协议。三者的区别在于对于出错的数据报文的处理机制不同。三种ARQ协议中，复杂性递增，效率也递增。接下来停等协议我们已经在之前粗略的提到过，接下来我们分别对这三个协议进行讨论。</p>
-<p>####3.2.1 停等协议（stop-and-wait）</p>
-<p>我们在上述讨论中提到的rdt3.0也被称为比特交替协议（alternating-bit protocol），尽管它是一个功能正确的协议，但其性能并不令人满意，其性能问题的核心在于它是一个停等协议，下面两张图分别给出了停等协议在<strong>无丢包</strong>、<strong>分组丢失</strong>、<strong>ACK丢失</strong>和<strong>过早超时</strong>4种情况的过程：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-17.png" alt="17"><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-18.png" alt="18"></p>
+<h3 id="3-2-ARQ"><a href="#3-2-ARQ" class="headerlink" title="3.2 ARQ"></a>3.2 ARQ</h3><p>如果在协议中，发送方在准备下一个数据项目之前先等待一个肯定的确认，则这样的协议称为ARQ（Automatic Repeat Request，自动重传请求协议）。自动重传请求（Automatic Repeat Request），通过接收方请求发送方重传出错的数据报文来恢复出错的报文，是通信中用于处理信道所带来差错的方法之一，传统自动重传请求分成为三种，即<strong>停等协议</strong>(stop-and-wait），<strong>回退n帧</strong>（go-back-n），以及<strong>选择性重传</strong>（selective repeat）。后两种协议是滑动窗口技术与请求重发技术的结合，由于窗口尺寸开到足够大时，帧在线路上可以连续地流动，因此又称其为流水线ARQ协议。三者的区别在于对于出错的数据报文的处理机制不同。三种ARQ协议中，复杂性递增，效率也递增。接下来停等协议我们已经在之前粗略的提到过，接下来我们分别对这三个协议进行讨论。</p>
+<h4 id="3-2-1-停等协议（stop-and-wait）"><a href="#3-2-1-停等协议（stop-and-wait）" class="headerlink" title="3.2.1 停等协议（stop-and-wait）"></a>3.2.1 停等协议（stop-and-wait）</h4><p>我们在上述讨论中提到的rdt3.0也被称为比特交替协议（alternating-bit protocol），尽管它是一个功能正确的协议，但其性能并不令人满意，其性能问题的核心在于它是一个停等协议，下面两张图分别给出了停等协议在<strong>无丢包</strong>、<strong>分组丢失</strong>、<strong>ACK丢失</strong>和<strong>过早超时</strong>4种情况的过程：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-17.png" alt="17"><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-18.png" alt="18"></p>
 <p>停等协议的性能不佳主要集中表现在它对信道的利用率很低，假设两个距离很远的端系统间的RTT大约为30ms，分组长度为1000字节（8000bits）的数据通过发送速率为1Gbps的信道传输，根据下图的说明和给出的公式计算可知信道利用率只有万分之2.7，停等协议极大的限制了底层网络硬件所能提供的能力，事实上，如果再考虑上发送方与接收方之间路由器的处理时间和排队时延，性能将更加糟糕。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-19.png" alt="19"></p>
 <p>停等协议的性能问题的根源在于每次只能发送一个分组，为了解决其存在的性能问题，我们可以采用流水线技术，即允许发送方一次发送多个分组而无需等待确认，但这也引入一些新的问题：</p>
 <blockquote>
@@ -326,8 +319,7 @@
 </ol>
 </blockquote>
 <p><strong>解决流水线差错恢复的两种基本方法分别是：GBN和SR</strong>。</p>
-<p>####3.2.2 GBN（go-back-n）</p>
-<p>在GBN中，允许发送方发送多个分组而不需要等待确认，但这里有一个限制，即在流水线中未确认的分组数不能超过某个最大允许数N（N即为窗口长度），下图中，我们定义base为最早的未确认分组号，定义nextseqnum为最小的未使用序号（也即下一个待发分组的序号），则[0，base-1]对应已经发送并被确认的分组，[base,nextseqnum-1]对应已经发送但未被确认的分组，[nextseqnum,base+N-1]内的序号能用于那些要被立即发送的分组，而大于等于base+N的序号是不能使用的。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-21.png" alt="21"></p>
+<h4 id="3-2-2-GBN（go-back-n）"><a href="#3-2-2-GBN（go-back-n）" class="headerlink" title="3.2.2 GBN（go-back-n）"></a>3.2.2 GBN（go-back-n）</h4><p>在GBN中，允许发送方发送多个分组而不需要等待确认，但这里有一个限制，即在流水线中未确认的分组数不能超过某个最大允许数N（N即为窗口长度），下图中，我们定义base为最早的未确认分组号，定义nextseqnum为最小的未使用序号（也即下一个待发分组的序号），则[0，base-1]对应已经发送并被确认的分组，[base,nextseqnum-1]对应已经发送但未被确认的分组，[nextseqnum,base+N-1]内的序号能用于那些要被立即发送的分组，而大于等于base+N的序号是不能使用的。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-21.png" alt="21"></p>
 <p>在未被确认的分组被确认后，窗口向前滑动，因此GBN也被称为滑动窗口协议，分组序号承载在分组首部一个固定长度的字段中（如果分组序号的比特数是k,则序号范围是$[0，2^k-1]$），关于GBN需要理解以下几点：</p>
 <blockquote>
 <ol>
@@ -339,7 +331,7 @@
 <p>一个GBN的例子：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-24.png" alt="24"></p>
 <p>GBN的优点是接收缓存简单，缺点是单个分组的差错就可能引起大量本没有必要重传的分组重传。</p>
 <p><strong>实现了GBN的rdt4.0：</strong><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-22.png" alt="22"><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-23.png" alt="23"></p>
-<p>####3.2.3 SR（selective repeat）<br> 在GBN中，随着信道差错率的增加，信道可能会被不必要重传的分组所充斥，而SR则可以避免这一问题，选择重传协议通过让发送方重传那些它怀疑在接收方出错的分组而避免不必要的重传，关于SR需要理解以下几点：</p>
+<h4 id="3-2-3-SR（selective-repeat）"><a href="#3-2-3-SR（selective-repeat）" class="headerlink" title="3.2.3 SR（selective repeat）"></a>3.2.3 SR（selective repeat）</h4><p> 在GBN中，随着信道差错率的增加，信道可能会被不必要重传的分组所充斥，而SR则可以避免这一问题，选择重传协议通过让发送方重传那些它怀疑在接收方出错的分组而避免不必要的重传，关于SR需要理解以下几点：</p>
 <blockquote>
 <ol>
 <li>接收方确认一个正确接收的分组而不管其是否按序，失序的分组将被缓存直到所有序号更小的分组都被收到为止。</li>
@@ -350,10 +342,9 @@
 <p>SR协议看起来比BNG优秀很多，但它也引入了新的问题，即：由于发送方和接收方窗口间缺乏同步，如果SR接受窗口太大，会带来下图中的问题：接收方在最后收到具有序号0的分组时，无法区分它是第1个分组的重传还是第5个分组的首次传输。<br><strong>这里要首先补充一点：</strong>由于序号空间是一个长度为$2^k$的环（即序号$2^k-1$之后的序号为0）。</p>
 <p><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-26.png" alt="26"></p>
 <p>为了避免上述问题，通常我们规定窗口长度必须小于序号空间大小的一半。</p>
-<p>##4 TCP</p>
-<p>###4.1 TCP概述<br>与UDP不同，TCP是面向连接的，两个端系统的进程在通信前首先要经过三次握手建立连接。TCP提供全双工服务，是点对点的（如果一台主机上的进程A与另一台主机上的进程B存在一条TCP连接，那么应用层数据就可以在从进程B流向A的同时，也从A流向B）。在发送方，当应用层有数据要发送时，客户进程通过套接字传递数据流，TCP将这些数据流引导到发送缓存中（发送缓存在三次握手初期设置），之后TCP会从发送缓存中取出一块数据，加上40字节的首部形成TCP报文段（TCP segment）下传给网络层。当TCP在另一端收到一个报文后，将其存入接收缓存，而后接收方应用程序从此缓存中读取数据流。</p>
+<h2 id="4-TCP"><a href="#4-TCP" class="headerlink" title="4 TCP"></a>4 TCP</h2><h3 id="4-1-TCP概述"><a href="#4-1-TCP概述" class="headerlink" title="4.1 TCP概述"></a>4.1 TCP概述</h3><p>与UDP不同，TCP是面向连接的，两个端系统的进程在通信前首先要经过三次握手建立连接。TCP提供全双工服务，是点对点的（如果一台主机上的进程A与另一台主机上的进程B存在一条TCP连接，那么应用层数据就可以在从进程B流向A的同时，也从A流向B）。在发送方，当应用层有数据要发送时，客户进程通过套接字传递数据流，TCP将这些数据流引导到发送缓存中（发送缓存在三次握手初期设置），之后TCP会从发送缓存中取出一块数据，加上40字节的首部形成TCP报文段（TCP segment）下传给网络层。当TCP在另一端收到一个报文后，将其存入接收缓存，而后接收方应用程序从此缓存中读取数据流。</p>
 <p>这里我们谈到“TCP会从发送缓存中取出一块数据”，所谓一块究竟是多大呢？TCP可从缓存中取出并放入报文段中的数据量受限于<strong>最大报文段长度（maximum segment size，MSS）</strong>，而MSS通常根据最大链路层帧长度，即最大传输单元（maximum transmission unit，MTU）来设置。以太网和PPP链路层协议都具有1500字节的MTU，除去TCP40字节的首部，因此MSS的典型值为1460字节。</p>
-<p>###4.2 TCP报文段结构<br>TCP定义在RFC 793中，下图显示了TCP报文段的结构：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-31.png" alt="31"></p>
+<h3 id="4-2-TCP报文段结构"><a href="#4-2-TCP报文段结构" class="headerlink" title="4.2 TCP报文段结构"></a>4.2 TCP报文段结构</h3><p>TCP定义在RFC 793中，下图显示了TCP报文段的结构：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-31.png" alt="31"></p>
 <p><strong>下面我们逐个分析这些字段：</strong></p>
 <blockquote>
 <ol>
@@ -380,25 +371,22 @@
 <li>FIN: No more data from sender（结束(Finish)标志，表示发送方完成了所有发送任务，要求释放连接。）<br><code>（* 所有标志为1有效。）</code></li>
 </ul>
 </blockquote>
-<p>###4.3 往返时间（RTT）的估计与超时</p>
-<p>####4.3.1 RTT的估计<br>TCP通过如下方式估计发送方与接收方的往返时间：<br>我们定义SampleRTT为某报文段被发出到对报文段的确认被收到之间所用的时间，同时TCP维持一个SampleRTT的均值EstimatedRTT。TCP每隔一段时间测量一次SampleRTT，并根据以下公式更新EstimatedRTT。<br>$$EstimatedRTT = (1- α)<em>EstimatedRTT + α</em>SampleRTT$$<br><strong>RFC 6298给出α的参考值为0.125</strong></p>
+<h3 id="4-3-往返时间（RTT）的估计与超时"><a href="#4-3-往返时间（RTT）的估计与超时" class="headerlink" title="4.3 往返时间（RTT）的估计与超时"></a>4.3 往返时间（RTT）的估计与超时</h3><h4 id="4-3-1-RTT的估计"><a href="#4-3-1-RTT的估计" class="headerlink" title="4.3.1 RTT的估计"></a>4.3.1 RTT的估计</h4><p>TCP通过如下方式估计发送方与接收方的往返时间：<br>我们定义SampleRTT为某报文段被发出到对报文段的确认被收到之间所用的时间，同时TCP维持一个SampleRTT的均值EstimatedRTT。TCP每隔一段时间测量一次SampleRTT，并根据以下公式更新EstimatedRTT。<br>$$EstimatedRTT = (1- α)<em>EstimatedRTT + α</em>SampleRTT$$<br><strong>RFC 6298给出α的参考值为0.125</strong></p>
 <p>EstimatedRTT是一个加权平均值，这个加权平均值对最近的样本赋予的权值要大于对老样本赋予的权值，因为越近的样本越能反应当前网络的拥塞情况。除了估算RTT外，测量RTT的变化也是有价值的，RFC 6298定义RTT偏差：DevRTT，用于估算SampleRTT偏离EstimatedRTT的程度：<br>$$DevRTT = (1-β)<em>DevRTT + β</em>|SampleRTT-EstimatedRTT|$$<br><strong>RFC 6298给出α的参考值为0.25</strong><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-41.png" alt="41"></p>
-<p>####4.3.2 超时<br>给出SampleRTT和EstimatedRTT的定义后，我们不妨考虑，TCP超时间隔应该选取什么值呢？我们定义这个值为TimeoutInterval为超时时间间隔。（显然，TimeoutInterval应当大于EstimatedRTT，否则会造成不必要的重传，但也不能比EstimatedRTT大太多，否则报文丢失时将无法很快的重传丢失报文）根据下面公式计算TimeoutInterval：<br>$$TimeoutInterval = EstimatedRTT + 4*DevRTT$$<br>RFC 6298推荐的TimeoutInterval初始值为1秒，并在超时后将TimeoutInterval加倍，直到报文收到确认后就使用上面的公式计算TimeoutInterval。</p>
-<p>###4.4 可靠数据传输<br>TCP在IP不可靠的尽力而为的服务之上提供了可靠的数据传输服务，确保了一个进程从其接收缓存读取的数据是<strong>无损坏，无间隔，非冗余和按序</strong>的数据流。接下来我们将具体讨论TCP是如何做到这一点的，我们将会看到，它与我们之前讨论的rdt3.0再很多细节上有所不同。</p>
+<h4 id="4-3-2-超时"><a href="#4-3-2-超时" class="headerlink" title="4.3.2 超时"></a>4.3.2 超时</h4><p>给出SampleRTT和EstimatedRTT的定义后，我们不妨考虑，TCP超时间隔应该选取什么值呢？我们定义这个值为TimeoutInterval为超时时间间隔。（显然，TimeoutInterval应当大于EstimatedRTT，否则会造成不必要的重传，但也不能比EstimatedRTT大太多，否则报文丢失时将无法很快的重传丢失报文）根据下面公式计算TimeoutInterval：<br>$$TimeoutInterval = EstimatedRTT + 4*DevRTT$$<br>RFC 6298推荐的TimeoutInterval初始值为1秒，并在超时后将TimeoutInterval加倍，直到报文收到确认后就使用上面的公式计算TimeoutInterval。</p>
+<h3 id="4-4-可靠数据传输"><a href="#4-4-可靠数据传输" class="headerlink" title="4.4 可靠数据传输"></a>4.4 可靠数据传输</h3><p>TCP在IP不可靠的尽力而为的服务之上提供了可靠的数据传输服务，确保了一个进程从其接收缓存读取的数据是<strong>无损坏，无间隔，非冗余和按序</strong>的数据流。接下来我们将具体讨论TCP是如何做到这一点的，我们将会看到，它与我们之前讨论的rdt3.0再很多细节上有所不同。</p>
 <p>在之前rdt3.0的讨论中，为了解决丢包的问题，我们实际上为每个分组都引入了一个计时器，一旦计时器超时，就重传该分组，但这样做我们要为计时器的管理付出巨大开销，因此，TCP实际上只采用单一的重传计时器（即使有多个已发送但还未被确认的报文段），这个计时器具体的工作方式我们会在下面逐步给出。</p>
-<p>####4.4.1 超时间隔加倍<br>在大多数TCP的实现中，对TimeoutInterval的取值并不总是按照4.3.2中的公式进行计算，而是这样一个过程：<br>每当超时时间发生时，TCP重传具有最小序号的还未被确认的报文段，并将TimeoutInterval的值设为之前的两倍，而不是使用4.3.2中的公式计算，因此，TimeoutInterval会成指数增长，但是，如果遇到<strong>上层应用的数据发送请求</strong>或<strong>收到来自接收方的ACK</strong>事件时，定时器会重新启动，此时启动的定时器将按照4.3.2中的公式计算TimeoutInterval。</p>
+<h4 id="4-4-1-超时间隔加倍"><a href="#4-4-1-超时间隔加倍" class="headerlink" title="4.4.1 超时间隔加倍"></a>4.4.1 超时间隔加倍</h4><p>在大多数TCP的实现中，对TimeoutInterval的取值并不总是按照4.3.2中的公式进行计算，而是这样一个过程：<br>每当超时时间发生时，TCP重传具有最小序号的还未被确认的报文段，并将TimeoutInterval的值设为之前的两倍，而不是使用4.3.2中的公式计算，因此，TimeoutInterval会成指数增长，但是，如果遇到<strong>上层应用的数据发送请求</strong>或<strong>收到来自接收方的ACK</strong>事件时，定时器会重新启动，此时启动的定时器将按照4.3.2中的公式计算TimeoutInterval。</p>
 <p>之所以这么做是出于以下考虑：如果发生超时，则很可能是由于网络拥塞造成的，而频繁的重传分组会使得拥塞更加严重，因此在没有<strong>上层应用的数据发送请求</strong>或<strong>收到来自接收方的ACK</strong>时，TCP使用加倍TimeoutInterval的方式，让重传经过越来越长的时间间隔进行。</p>
-<p>####4.4.2 快速重传<br>如果我们仅依赖是否超时来判断是否丢包，则对于这个真正丢失的分组，发送方必须在超时之后才会重传它，如果超时周期较长，重传会被延迟。为了优化这个问题，TCP引入了<strong>快速重传</strong>机制。</p>
+<h4 id="4-4-2-快速重传"><a href="#4-4-2-快速重传" class="headerlink" title="4.4.2 快速重传"></a>4.4.2 快速重传</h4><p>如果我们仅依赖是否超时来判断是否丢包，则对于这个真正丢失的分组，发送方必须在超时之后才会重传它，如果超时周期较长，重传会被延迟。为了优化这个问题，TCP引入了<strong>快速重传</strong>机制。</p>
 <p>假设接收方期待接收序号为n的报文段但却收到了序号大于n的报文段，我们就说此时它检测到了数据流的一个间隔，造成间隔的原因可能是报文段丢失或报文段被重新排序，由于TCP不使用否定确认，它会对已经收到的最后一个按序字节数据进行重复确认（即产生一个冗余ACK），作为发送方如果收到对同一个数据的<strong>3个冗余ACK</strong>（即第4次收到这个数据的ACK），即使当前计时器还没有超时，TCP也立即重传这个分组，这就是快速重传机制。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-43.png" alt="43"></p>
-<p>####4.4.3 累积确认<br>TCP返回的ACK实际上是它期待（从发送方）接收的下一个分组号，TCP的确认是累积式的，正确接收但失序的报文会被缓存但不会被逐个确认（确认号都是其期待接收的下一个分组号，即前面提到的冗余ACK）。发送方只需要维护已发送但未被确认的字节的最小序号（SendBase）和下一个要发送的字节的序号（NextSeqNum），对于发送方的一组报文1,2，…，N，假设报文段n丢失（n&lt;N），但它之前的全部报文和它之后的全部报文在超时前到达了接收方，则超时后TCP只会重传至多一个报文段（而GBN则会重发n及n之后的分组）。如果对报文段n+1的确认在n超时前到达，即使对n的确认还没有到达，发送方也可以知道接收方已经正确接收报文n了，这是因为TCP采取累积确认，收到对n+1的确认就意味着n+1之前的分组接收方都收到了。</p>
+<h4 id="4-4-3-累积确认"><a href="#4-4-3-累积确认" class="headerlink" title="4.4.3 累积确认"></a>4.4.3 累积确认</h4><p>TCP返回的ACK实际上是它期待（从发送方）接收的下一个分组号，TCP的确认是累积式的，正确接收但失序的报文会被缓存但不会被逐个确认（确认号都是其期待接收的下一个分组号，即前面提到的冗余ACK）。发送方只需要维护已发送但未被确认的字节的最小序号（SendBase）和下一个要发送的字节的序号（NextSeqNum），对于发送方的一组报文1,2，…，N，假设报文段n丢失（n&lt;N），但它之前的全部报文和它之后的全部报文在超时前到达了接收方，则超时后TCP只会重传至多一个报文段（而GBN则会重发n及n之后的分组）。如果对报文段n+1的确认在n超时前到达，即使对n的确认还没有到达，发送方也可以知道接收方已经正确接收报文n了，这是因为TCP采取累积确认，收到对n+1的确认就意味着n+1之前的分组接收方都收到了。</p>
 <p>附：RFC 5681对产生TCP ACK的建议：<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-44.png" alt="44"></p>
-<p>###4.5 流量控制</p>
-<p>####4.5.1 流量控制的实现<br>一条TCP连接每一侧主机都为该连接设置了接收缓存，如果应用程序读取数据相对缓慢，而发送方发送的太多太快，发送的数据就会时接收缓存溢出。TCP为应用程序提供<strong>流量控制服务（flow-control service）</strong>以消除发送方使接收方缓存溢出的可能性，因此流量控制是一个速度匹配服务。</p>
+<h3 id="4-5-流量控制"><a href="#4-5-流量控制" class="headerlink" title="4.5 流量控制"></a>4.5 流量控制</h3><h4 id="4-5-1-流量控制的实现"><a href="#4-5-1-流量控制的实现" class="headerlink" title="4.5.1 流量控制的实现"></a>4.5.1 流量控制的实现</h4><p>一条TCP连接每一侧主机都为该连接设置了接收缓存，如果应用程序读取数据相对缓慢，而发送方发送的太多太快，发送的数据就会时接收缓存溢出。TCP为应用程序提供<strong>流量控制服务（flow-control service）</strong>以消除发送方使接收方缓存溢出的可能性，因此流量控制是一个速度匹配服务。</p>
 <p>TCP通过让发送方维护一个称为<strong>接收窗口（receive window）</strong>的变量来提供流量控制（接收窗口告诉发送方该接收方还有多少缓存空间）。因为TCP是全双工通信，因此在连接两端的发送方都各自维护一个接收窗口。<br>定义：LastByteRead为主机B上应用程序从缓存读出的数据流的最后一字节的编号，LastByteRcvd为从网络中到达主机B并且已经放入主机B接收缓存中的数据流的最后一个字节的编号。则为了不使缓存溢出，下面式子必须成立：<br>$$LastByteRcvd - LastByteRead≤RcvBuffer$$<br>用rwnd表示接收窗口大小，则：<br>$$rwnd=RcvBuffer-（LastByteRcvd - LastByteRead）$$<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-45.png" alt="45"></p>
 <p>为了不使主机B接收缓存溢出，主机A只需轮流跟踪2个变量：LastByteSent和LastByteAcked，注意到LastByteSent - LastByteAcked就是主机A发送到连接中但未被确认的数据量，通过将未被确认的数据量控制在rwnd以内，就可以保证主机B的缓存不会溢出。</p>
-<p>####4.5.2 死锁处理<br>在上面的讨论中，如果主机B接收缓存已满，即rwnd=0，在将这一信息告诉主机A后，如果B没有任何数据要发送给A，就会发生死锁，因为此时即使B将缓存中的数据取走，A也无法得知这一事实。为了解决这一问题，我们采用“聪明的发送方/笨拙的接收方”，即发送方定期(Persist Timer)发送一个字节数据，以使接收方响应以获得通知窗口的大小。接收方响应采用下一个期待接收的字节。</p>
-<p>###4.6 连接管理</p>
-<p>####4.6.1 三次握手<br>建立连接的过程需要三步，称为<strong>三次握手</strong>：</p>
+<h4 id="4-5-2-死锁处理"><a href="#4-5-2-死锁处理" class="headerlink" title="4.5.2 死锁处理"></a>4.5.2 死锁处理</h4><p>在上面的讨论中，如果主机B接收缓存已满，即rwnd=0，在将这一信息告诉主机A后，如果B没有任何数据要发送给A，就会发生死锁，因为此时即使B将缓存中的数据取走，A也无法得知这一事实。为了解决这一问题，我们采用“聪明的发送方/笨拙的接收方”，即发送方定期(Persist Timer)发送一个字节数据，以使接收方响应以获得通知窗口的大小。接收方响应采用下一个期待接收的字节。</p>
+<h3 id="4-6-连接管理"><a href="#4-6-连接管理" class="headerlink" title="4.6 连接管理"></a>4.6 连接管理</h3><h4 id="4-6-1-三次握手"><a href="#4-6-1-三次握手" class="headerlink" title="4.6.1 三次握手"></a>4.6.1 三次握手</h4><p>建立连接的过程需要三步，称为<strong>三次握手</strong>：</p>
 <blockquote>
 <ol>
 <li>客户端TCP向服务器端TCP发送一个SYN报文段，不含应用层数据，SYN=1，客户端会随机选择一个初始序号x。</li>
@@ -407,7 +395,7 @@
 </ol>
 </blockquote>
 <p><strong>超时重发：</strong>每一步均采用超时重发，多次重发后将放弃。重发次数与间隔时间依系统而不同。<br><strong>数据字节序号：</strong>客户和服务器发送的第一个数据字节的序号分别为x+1和y+1。<br><strong>选项：</strong>头两个数据段给出选项：SACK-Permited，Scale，MSS。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-46.png" alt="46"><br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-47.png" alt="47"></p>
-<p>####4.6.2 四次挥手<br>中断连接的过程需要四步，称为<strong>四次挥手</strong>：</p>
+<h4 id="4-6-2-四次挥手"><a href="#4-6-2-四次挥手" class="headerlink" title="4.6.2 四次挥手"></a>4.6.2 四次挥手</h4><p>中断连接的过程需要四步，称为<strong>四次挥手</strong>：</p>
 <blockquote>
 <ol>
 <li>客户端TCP向服务器端TCP发送一个FIN报文段，FIN=1，seq=x，客户端进入FIN_WAIT_1状态。</li>
@@ -417,9 +405,9 @@
 </ol>
 </blockquote>
 <p><strong>释放连接：</strong>先发FIN一方在ACK发送完毕后需要等待2MSL(Maximum Segment Lifetime)的时间才完全关闭。TCP标准中MSL采用60秒，Unix采用30秒。<br><strong>超时重发：</strong>超时未收到确认，则超时自动重发，在若干次重发后依然没有收到确认，则发送RST后强行释放连接。不同的系统重发方法不同。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-48.png" alt="48"></p>
-<p>####4.6.3 SYN洪泛攻击<br>在三次握手的过程中，如果客户端不发送ACK完成第三步，则服务器将在一段时间内出于半开连接的状态，并在这一时间之后才断开连接并收回资源，如果攻击方发送大量TCP SYN连接但又不完成第三步，就会导致服务器的连接资源最终被耗尽。这种攻击方式被称为SYN Flood Attack，是一种经典的DOS攻击方式，我们可以采用SYN cookie（RFC 4987）来避免它。</p>
-<p>###4.7 拥塞控制<br>TCP发送方法可能因为IP网络的拥塞而被遏制，这种对发送方的控制称为拥塞控制。由于IP层不向端系统提供显式的网络拥塞反馈，因此TCP必须使用端到端的拥塞控制。TCP拥塞控制的方法大致可描述为根据发送方所感知到的网络拥塞程度来限制其能向连接发送流量的速率。如果TCP发送方感知到路径上没有拥塞，则增加发送速率，反之则降低发送速率。<br>运行在发送方的拥塞控制机制需要跟踪一个额外的变量，即拥塞窗口（congestion window），不妨定义它为cwnd，发送方中未被确认的数据量不能超过cwnd和rwnd中的较小值，即：<br>$$LastByteRcvd - LastByteRead≤min{cwnd , rwnd}$$<br><strong>TCP拥塞控制算法主要包括三个部分：慢启动，拥塞避免，快速恢复。</strong>其中慢启动和拥塞避免是TCP的强制部分，快速恢复是可选部分。</p>
-<p>####4.7.1 慢启动<br>当一条TCP连接开始时，在慢启动（slow-start）状态，cwnd的值以1个MSS开始，并且每当传输的报文段被首次确认就增加一个MSS，这样每经过一个RTT发送速率就会翻倍，因此，采用慢启动算法，TCP发送速率起始慢，但在慢启动阶段以指数增长。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-51.png" alt="51"></p>
+<h4 id="4-6-3-SYN洪泛攻击"><a href="#4-6-3-SYN洪泛攻击" class="headerlink" title="4.6.3 SYN洪泛攻击"></a>4.6.3 SYN洪泛攻击</h4><p>在三次握手的过程中，如果客户端不发送ACK完成第三步，则服务器将在一段时间内出于半开连接的状态，并在这一时间之后才断开连接并收回资源，如果攻击方发送大量TCP SYN连接但又不完成第三步，就会导致服务器的连接资源最终被耗尽。这种攻击方式被称为SYN Flood Attack，是一种经典的DOS攻击方式，我们可以采用SYN cookie（RFC 4987）来避免它。</p>
+<h3 id="4-7-拥塞控制"><a href="#4-7-拥塞控制" class="headerlink" title="4.7 拥塞控制"></a>4.7 拥塞控制</h3><p>TCP发送方法可能因为IP网络的拥塞而被遏制，这种对发送方的控制称为拥塞控制。由于IP层不向端系统提供显式的网络拥塞反馈，因此TCP必须使用端到端的拥塞控制。TCP拥塞控制的方法大致可描述为根据发送方所感知到的网络拥塞程度来限制其能向连接发送流量的速率。如果TCP发送方感知到路径上没有拥塞，则增加发送速率，反之则降低发送速率。<br>运行在发送方的拥塞控制机制需要跟踪一个额外的变量，即拥塞窗口（congestion window），不妨定义它为cwnd，发送方中未被确认的数据量不能超过cwnd和rwnd中的较小值，即：<br>$$LastByteRcvd - LastByteRead≤min{cwnd , rwnd}$$<br><strong>TCP拥塞控制算法主要包括三个部分：慢启动，拥塞避免，快速恢复。</strong>其中慢启动和拥塞避免是TCP的强制部分，快速恢复是可选部分。</p>
+<h4 id="4-7-1-慢启动"><a href="#4-7-1-慢启动" class="headerlink" title="4.7.1 慢启动"></a>4.7.1 慢启动</h4><p>当一条TCP连接开始时，在慢启动（slow-start）状态，cwnd的值以1个MSS开始，并且每当传输的报文段被首次确认就增加一个MSS，这样每经过一个RTT发送速率就会翻倍，因此，采用慢启动算法，TCP发送速率起始慢，但在慢启动阶段以指数增长。<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-03-09-51.png" alt="51"></p>
 <p>我们记ssthresh为“慢启动阈值”，在以下三种情况发生时，结束慢启动过程：</p>
 <blockquote>
 <ol>
@@ -428,14 +416,14 @@
 <li>如果检测到一个由于3个冗余ACK指示的丢包事件，此时TCP执行快速重传并转入<strong>快速恢复</strong>状态。</li>
 </ol>
 </blockquote>
-<p>####4.7.2 拥塞避免<br>进入拥塞避免状态时，cnwd的值大约是上次遇到拥塞时值的一半，此时TCP采取一种较为保守的方法，每到达一个新的确认，就将cwnd增加一个<strong>MSS*(MSS/cwnd)</strong>字节，即每个RTT只将cwnd的值增加一个MSS（线性增长）。<br>在以下两种情况发生时，结束拥塞避免的线性增长：</p>
+<h4 id="4-7-2-拥塞避免"><a href="#4-7-2-拥塞避免" class="headerlink" title="4.7.2 拥塞避免"></a>4.7.2 拥塞避免</h4><p>进入拥塞避免状态时，cnwd的值大约是上次遇到拥塞时值的一半，此时TCP采取一种较为保守的方法，每到达一个新的确认，就将cwnd增加一个<strong>MSS*(MSS/cwnd)</strong>字节，即每个RTT只将cwnd的值增加一个MSS（线性增长）。<br>在以下两种情况发生时，结束拥塞避免的线性增长：</p>
 <blockquote>
 <ol>
 <li>如果检测到一个由于超时指示的丢包事件，将ssthresh更新为cwnd/2，cwnd的值被置位1个MSS，转移到<strong>慢启动</strong>状态。</li>
 <li>如果检测到一个由于3个冗余ACK指示的丢包事件，TCP发送方将cwnd的值减半，将ssthresh设置为cwnd/2，进入<strong>快速恢复</strong>状态。</li>
 </ol>
 </blockquote>
-<p>####4.7.3 快速恢复<br><strong>注意：</strong>快速恢复只是TCP推荐但非必须的构件。<br>在快速恢复中，对于引起TCP进入快速恢复状态的缺失报文段，对收到的每个冗余ACK（最少为3个，但可能不止3个），cwnd的值都增加一个MSS（最少增加3个MSS），不妨设因为冗余ACK而增加的MSS数为k。<br>在以下两种情况发生时，结束快速恢复：</p>
+<h4 id="4-7-3-快速恢复"><a href="#4-7-3-快速恢复" class="headerlink" title="4.7.3 快速恢复"></a>4.7.3 快速恢复</h4><p><strong>注意：</strong>快速恢复只是TCP推荐但非必须的构件。<br>在快速恢复中，对于引起TCP进入快速恢复状态的缺失报文段，对收到的每个冗余ACK（最少为3个，但可能不止3个），cwnd的值都增加一个MSS（最少增加3个MSS），不妨设因为冗余ACK而增加的MSS数为k。<br>在以下两种情况发生时，结束快速恢复：</p>
 <blockquote>
 <ol>
 <li>当丢失报文段的一个ACK到达时，TCP将cnwd减去k后进入拥塞避免状态。</li>
@@ -458,7 +446,7 @@
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/04/07/TransportLayer/" data-title="TransportLayer" data-url="https://github.com/CornFish98/CornFish98.github.io.git/2016/04/07/TransportLayer/"></div>
+<div class="ds-thread" data-thread-key="2016/04/07/Transport Layer/" data-title="传输层（Transport Layer）" data-url="https://github.com/CornFish98/CornFish98.github.io.git/2016/04/07/Transport Layer/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
