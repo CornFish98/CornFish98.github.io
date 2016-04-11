@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>primer读书笔记（2） | CornFish</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="CornFish">
+    <meta name="author" content="ZKY">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="CornFish" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="http://cornfish98.com" target="_BLANK" class="animsition-link">MyBlog</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/C/" class="animsition-link">C++<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/Computer-Networking/" class="animsition-link">Computer Networking<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Data-Structure-and-Algorithms/" class="animsition-link">Data Structure and Algorithms<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/Information-Security/" class="animsition-link">Information Security<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/LeetCode/" class="animsition-link">LeetCode<small>(4)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://www.cornfish98.com/" class="animsition-link">ZKY</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                        
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">CornFish</a></li>
+                            <li class="nolink">一年一年，一天一念</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span></span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>Welcome to Cornfish's blog!</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-04-11T08:54:42.000Z" itemprop="datePublished">
+          2016-04-11
+      </time>
+    
+</span>
+                <h1>primer读书笔记（2）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="2-string、vector和array"><a href="#2-string、vector和array" class="headerlink" title="2 string、vector和array"></a>2 string、vector和array</h3><h4 id="2-1-string"><a href="#2-1-string" class="headerlink" title="2.1 string"></a>2.1 string</h4><h5 id="2-1-1-定义和初始化"><a href="#2-1-1-定义和初始化" class="headerlink" title="2.1.1 定义和初始化"></a>2.1.1 定义和初始化</h5><p>下面的几种初始化方法中，带=号的执行拷贝初始化，不带=号的执行直接初始化。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> s1; <span class="comment">//默认初始化为空串</span></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s2</span><span class="params">(s1)</span></span>;</span><br><span class="line"><span class="built_in">string</span> s2 = s1;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s3</span><span class="params">(<span class="string">"value"</span>)</span></span>;</span><br><span class="line"><span class="built_in">string</span> s3 = <span class="string">"value"</span>;</span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s4</span><span class="params">(n,<span class="string">'c'</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-2-基本操作"><a href="#2-1-2-基本操作" class="headerlink" title="2.1.2 基本操作"></a>2.1.2 基本操作</h5><blockquote>
+<p><code>os &lt;&lt; s;</code>//将s写到输出流os中，返回os<br><code>is &gt;&gt; s;</code>//从is中读取字符串赋给s，字符串以空格分隔，返回is（这种方式读入会过滤掉开头和末尾的空格），读取未知数量的string可以使用while(cin &gt;&gt; string)<br><code>getline(is, s);</code> //从is中读取一行（不断读入直到遇到换行符）赋给s，返回is，（不会过滤掉头尾的空格，读入时会连同换行符一起读入，但在返回时会丢弃换行符。<br><code>s.empty();</code>  //返回s是否为空<br><code>s.size();</code> //返回s中字符个数，返回值是一个类型为string::size_type的无符号数<br><code>s[n]</code>  //返回s中下标为n的字符的引用，n的类型为string::size_type<br><code>s1 + s2;</code> //返回连接后的结果，也可以将字面值和string相加，但必须保证+号两边的运算对象至少有一个是string<br><code>s1 = s2;</code> //用s2的副本代替s1<br>==、!=、&lt;、&lt;=、&gt;、&gt;=依据字典序对两个字符串进行比较</p>
+<h5 id="2-1-3-处理string中字符"><a href="#2-1-3-处理string中字符" class="headerlink" title="2.1.3 处理string中字符"></a>2.1.3 处理string中字符</h5><p>为了处理string对象中的单个字符，头文件cctype中定义了如下13个函数：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isalnum</span>(c);  <span class="comment">//是否为字母或数字</span></span><br><span class="line"><span class="built_in">isalpha</span>(c);  <span class="comment">//是否为字母</span></span><br><span class="line"><span class="built_in">iscntrl</span>(c);  <span class="comment">//是否为控制字符</span></span><br><span class="line"><span class="built_in">isdigit</span>(c);  <span class="comment">//是否为数字</span></span><br><span class="line"><span class="built_in">isgraph</span>(c);  <span class="comment">//不是空格但可打印时为真</span></span><br><span class="line"><span class="built_in">islower</span>(c);  <span class="comment">//是否小写字母</span></span><br><span class="line"><span class="built_in">isprint</span>(c);  <span class="comment">//是否可打印字符</span></span><br><span class="line"><span class="built_in">ispunct</span>(c);  <span class="comment">//是否标点符号</span></span><br><span class="line"><span class="built_in">isspace</span>(c);  <span class="comment">//是空白字符时为真（空白字符包括空格、制表符、回车符、换行符、进纸符）</span></span><br><span class="line"><span class="built_in">isupper</span>(c);  <span class="comment">//是否大写字母</span></span><br><span class="line"><span class="built_in">isxdigit</span>(c);  <span class="comment">//是否十六进制数</span></span><br><span class="line"><span class="built_in">tolower</span>(c);  <span class="comment">//如果是大写字母，则转为小写，否则原样输出c</span></span><br><span class="line"><span class="built_in">toupper</span>(c);  <span class="comment">//如果是小写字母，则转为大写，否则原样输出c</span></span><br></pre></td></tr></table></figure>
+<p>关于string还有其他很多内容，考虑到知识的关联性，我们将在后面顺序容器的章节中进一步补充完善。</p>
+<h4 id="2-2-vector"><a href="#2-2-vector" class="headerlink" title="2.2 vector"></a>2.2 vector</h4><p>标准库类型vector是一种顺序容器，表示相同类型对象的集合。vector是模板而非类型，因此由vector生成的类型必须包含vector中元素的类型（如<code>vector&lt;int&gt;</code>）</p>
+<h5 id="2-2-1-定义和初始化"><a href="#2-2-1-定义和初始化" class="headerlink" title="2.2.1 定义和初始化"></a>2.2.1 定义和初始化</h5><p>类似string，下面的初始化方式同样分为直接初始化和拷贝初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;T&gt; v1;  <span class="comment">//默认初始化</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v2(v1);  <span class="comment">//直接初始化</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v2 = v1;  <span class="comment">//与v2(v1)等价，拷贝初始化</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v3(n,val);  <span class="comment">//直接初始化</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v4(n);  <span class="comment">//包含n个重复执行了值初始化的对象</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v5&#123;a,b,c&#125;  <span class="comment">//直接初始化，列表初始化</span></span><br><span class="line"><span class="built_in">vector</span>&lt;T&gt; v5 = &#123;a,b,c&#125;  <span class="comment">//拷贝初始化，列表初始化</span></span><br></pre></td></tr></table></figure>
+<p>进行列表初始化时必须使用大括号（不能使用圆括号）。如果初始化时只提供元素数量而略去初始值，则会进行默认初始化（如果vector的对象类型不支持默认初始化，则在初始化时必须提供初始值，否则初始化失败）。</p>
+<h5 id="2-2-2-vector基本操作"><a href="#2-2-2-vector基本操作" class="headerlink" title="2.2.2 vector基本操作"></a>2.2.2 vector基本操作</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">v.empty();  <span class="comment">//是否为空</span></span><br><span class="line">v.size();  <span class="comment">//返回v中元素个数，size_type类型</span></span><br><span class="line">v.push_back(t);  <span class="comment">//在v的尾端添加值为t的元素</span></span><br><span class="line">v[n]  <span class="comment">//返回v中第n个位置上元素的引用</span></span><br><span class="line">==、!=、&gt;=、&gt;、&lt;=、&lt;   <span class="comment">//相等性判断和字典序比较</span></span><br></pre></td></tr></table></figure>
+<p>vector中不能使用下标形式添加元素，但可以使用下标修改元素的值（前提是下标必须存在）。为了确保下标合法，应当尽可能使用范围for语句。</p>
+<h5 id="2-2-3-初谈迭代器"><a href="#2-2-3-初谈迭代器" class="headerlink" title="2.2.3 初谈迭代器"></a>2.2.3 初谈迭代器</h5><p>C++中所有标准库容器都可以使用迭代器，一个有效的迭代器或者指向容器中的某个元素，或者为尾后迭代器。<br>所有标准库容器迭代器都支持的运算符如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*iter</span><br><span class="line">iter -&gt; mem</span><br><span class="line">++iter</span><br><span class="line">--iter</span><br><span class="line">iter1 == iter2</span><br><span class="line">iter1 != iter2</span><br></pre></td></tr></table></figure>
+<p>拥有迭代器的标准库类型使用iterator和const_iterator来表示迭代器的类型。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;  <span class="comment">//it能读写vector&lt;int&gt;的元素</span></span><br><span class="line"><span class="built_in">string</span>：：const_iterator it2;  <span class="comment">//只能读不能写</span></span><br></pre></td></tr></table></figure>
+<p>为了能返回<code>const_iterator</code>类型的返回值，C++11引入新函数，cbegin和cend，如<code>auto it = v.cbegin()</code><br>说明两点问题：</p>
+<blockquote>
+<ol>
+<li>由于运算符的优先级，<code>(*it).empty</code>的括号必不可少</li>
+<li>但凡使用了迭代器的循环体，都不要向迭代器所属的容器添加元素</li>
+</ol>
+</blockquote>
+<p>string和vector的迭代器提供了额外的运算符，如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iter + n</span><br><span class="line">iter - n</span><br><span class="line">iter1 += n</span><br><span class="line">iter1 -= n</span><br><span class="line">iter1 - iter2  <span class="comment">//返回类型为difference_type，是一种带符号的整数</span></span><br><span class="line">&gt;、&gt;=、&lt;、&lt;=</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-数组"><a href="#2-3-数组" class="headerlink" title="2.3 数组"></a>2.3 数组</h4><p>数组是一种类似于vector的数据结构，但是在性能和灵活性的权衡上与vector有所不同。数组也时存放类型相同对象的容器，但数组的大小确定不变，不能随意向数组中增加元素，但也正因为其大小固定，因此对一些应用来说其运行时性能更好，这是以损失灵活性为代价的。</p>
+<p>数组是一种复合类型，其声明形如a[d]，其中a是数组名，d为数组维度（表明元素的个数）。注意，元素个数也是数组类型的一部分，编译时数组的维度应当是已知的，即数组的维度必须是一个常量表达式。（如果不清楚元素的确切个数，应当使用vector）</p>
+<h5 id="2-3-1-内置数组的定义和初始化"><a href="#2-3-1-内置数组的定义和初始化" class="headerlink" title="2.3.1 内置数组的定义和初始化"></a>2.3.1 内置数组的定义和初始化</h5><p>为了分析清楚内置数组定义的类型，给出以下几个典型例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *parr[<span class="number">10</span>]; <span class="comment">//含有10个整形指针的数组</span></span><br><span class="line"><span class="keyword">int</span> (*Parray)[<span class="number">10</span>] = &amp;arr;  <span class="comment">//Parray是一个指针，指向一个含有10个整数的数组</span></span><br><span class="line"><span class="keyword">int</span> (&amp;arrRef)[<span class="number">10</span>] = arr;  <span class="comment">//arrRef是一个引用，引用一个含有10个整数的数组</span></span><br><span class="line"><span class="keyword">int</span> *(&amp;arry)[<span class="number">10</span>] = ptrs;  <span class="comment">//arry是一个引用，引用一个含有10个整型指针的数组</span></span><br></pre></td></tr></table></figure>
+<p>关于数组的初始化，注意以下几点：</p>
+<blockquote>
+<ol>
+<li>如果在定义时采用显示列表初始化，可以省略数组的大小，如：<code>int a[] = {0，1，2}</code></li>
+<li>使用字符串初始化char型数组时，会自动添加表示字符串结束的空字符<code>\0</code>,因此必须确保数组大小足够容乃这个空字符。</li>
+<li>不能讲数组的内容拷贝给其他数组作为初始值，必须通过循环逐个拷贝。</li>
+<li>下面的代码会执行默认初始化（全部初始化为0），<code>int num[10] = {};</code></li>
+<li>数组下标为size_t类型，要格外小心下标越界，这会导致缓冲区溢出。</li>
+</ol>
+</blockquote>
+<h5 id="2-3-2-怎样理解数组即指针"><a href="#2-3-2-怎样理解数组即指针" class="headerlink" title="2.3.2 怎样理解数组即指针"></a>2.3.2 怎样理解数组即指针</h5><p>C++中数组和指针有着非常密切的联系，使用数组时编译器一般会把数组转换为指针，即在用到数组名字的地方，编译器会自动将其替换为一个指向数组首元素的指针，如使用auto对一个数组进行类型推断时，得到的推断类型为指针类型。（在大多数表达式中，使用数组类型的对象其实是使用一个指向该数组首元素的指针）</p>
+<p>但要注意，使用decltype关键字时，推断类型仍为数组，而不是指针。</p>
+<p>在数组中，指针也是迭代器，考虑如下的例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *p = arr;  <span class="comment">//p指向数组第一个元素,相当于int *p = &amp;arr[0]</span></span><br><span class="line">++p;  <span class="comment">//p指向arr[1]</span></span><br><span class="line"><span class="keyword">int</span> *e = &amp;arr[<span class="number">10</span>];  <span class="comment">//指向尾元素下一位置的指针，相当于尾后迭代器</span></span><br></pre></td></tr></table></figure>
+<p>C++11引入标准库函数begin和end，它们定义在头文件iterator中，使用方法如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ia[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *beg = begin(ia);</span><br><span class="line"><span class="keyword">int</span> *last = end(ia);</span><br></pre></td></tr></table></figure>
+<p>指向数组的指针可以执行所有迭代器运算，如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;&#125;;</span><br><span class="line"><span class="keyword">int</span> *ip = arr;  <span class="comment">//等价于int int *ip = &amp;arr[0];</span></span><br><span class="line"><span class="keyword">int</span> *ip2 = ip + <span class="number">4</span>;  <span class="comment">//等价于int *ip2 = &amp;arr[4];</span></span><br><span class="line"><span class="keyword">auto</span> n = end(arr) - begin(arr);  <span class="comment">//n = 5;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> *p = &amp;arr[<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> i = p[<span class="number">-2</span>];  <span class="comment">//等价于int i = &amp;arr[0];</span></span><br><span class="line"><span class="keyword">int</span> j = *(p + <span class="number">2</span>);  <span class="comment">//等价于int j = &amp;arr[4];</span></span><br></pre></td></tr></table></figure>
+<p>两个指针相减的结果的类型为ptrdiff_t，和size_t一样，它是一种标准库类型，定义在cstddef头文件中，但它是一种带符号的整数。</p>
+<h5 id="2-3-3-C风格字符串"><a href="#2-3-3-C风格字符串" class="headerlink" title="2.3.3 C风格字符串"></a>2.3.3 C风格字符串</h5><p>应当尽量避免使用C风格字符串，因为它不仅使用不方便，而且极容易引发程序漏洞，是诸多安全问题的根本原因。<br>下面C风格字符串的函数定义在头文件cstring中：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> p[] = &#123;<span class="string">'c'</span>,<span class="string">'+'</span>，<span class="string">'+'</span>，<span class="string">'\0'</span>&#125;;  <span class="comment">//必须以空字符结束</span></span><br><span class="line"><span class="built_in">strlen</span>(p);  <span class="comment">//返回p的长度，空字符不计算在内</span></span><br><span class="line"><span class="built_in">strcmp</span>(p1,p2);  <span class="comment">//根据p1,p2的相等性返回正、负或零</span></span><br><span class="line"><span class="built_in">strcat</span>(p1,p2);  <span class="comment">//将p2附加到p1之后，返回p1</span></span><br><span class="line"><span class="built_in">strcpy</span>(p1,p2);  <span class="comment">//将p2拷贝给p1，返回p1</span></span><br></pre></td></tr></table></figure>
+<p>在C++中，我们可以使用字符串字面值来初始化string对象，任何出现字符串字面值的地方都可以使用空字符结束的字符数组来替代，但不能用string对象直接初始化指向字符的指针，为了完成该功能，需要使用string中提供的c_str成员函数，这个函数返回一个类型为<code>const char*</code>的指针。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">s</span><span class="params">(<span class="string">"Hello world!"</span>)</span></span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = s.c_str();</span><br></pre></td></tr></table></figure>
+<p>此外，还可以使用数组初始化vector，用法如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> int_arr[] = &#123;<span class="number">0</span>，<span class="number">1</span>，<span class="number">2</span>，<span class="number">3</span>，<span class="number">4</span>，<span class="number">5</span>&#125;；</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ivec(begin(int_arr),end(int_arr));</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-3-4-多维数组"><a href="#2-3-4-多维数组" class="headerlink" title="2.3.4 多维数组"></a>2.3.4 多维数组</h5><p>严格来讲，C++中并没有多维数组，所谓多维数组，其实是数组的数组，理解这一点非常重要。理解下面这个例子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>][<span class="number">20</span>][<span class="number">30</span>] = &#123;<span class="number">0</span>&#125;;  <span class="comment">//arr是一个大小为10的数组，它的每个元素都是大小为20的数组，而这些数组的元素是含有30个整数的数组，这行代码将所有元素都初始化为0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//多维数组的初始化如下：</span></span><br><span class="line"><span class="keyword">int</span> ia[<span class="number">2</span>][<span class="number">3</span>] = &#123;&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;&#125;;</span><br><span class="line"><span class="keyword">int</span> ia[<span class="number">2</span>][<span class="number">3</span>] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;; <span class="comment">//和上面一行等价</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">3</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">0</span>&#125;,&#123;<span class="number">4</span>&#125;,&#123;<span class="number">8</span>&#125;&#125;;  <span class="comment">//显示初始化每行首元素，其余元素执行默认值初始化</span></span><br><span class="line"><span class="keyword">int</span> ix[<span class="number">3</span>][<span class="number">4</span>] = &#123;<span class="number">0</span>，<span class="number">3</span>，<span class="number">6</span>，<span class="number">9</span>&#125;;  <span class="comment">//显示初始化第一行，其余执行值初始化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面代码把row绑定到a的第二个4元数组上：</span></span><br><span class="line"><span class="keyword">int</span> (&amp;row)[<span class="number">4</span>] = a[<span class="number">1</span>];  <span class="comment">//row是一个引用，引用了一个int型的数组，该数组有4个元素</span></span><br><span class="line"><span class="comment">//下面代码把指针p指向二维数组a的第一个4元组</span></span><br><span class="line"><span class="keyword">int</span> (*p)[<span class="number">4</span>] = a;  <span class="comment">//p是一个指针，指向一个int型的数组，该数组有4个元素</span></span><br></pre></td></tr></table></figure>
+<p>使用范围for语句处理多维数组时，要切记，除了最内层循环外，其他所有循环的控制变量都应该是引用类型。之所以将外层循环控制变量声明为引用类型，是为了避免数组被自动转成指针，这样内层循环就无法正常工作了。此外，如果要改变数组元素的值，那么最内层的循环的控制变量也应当写成引用类型。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">size_t</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;row : ia)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> &amp;col : row)&#123;<span class="comment">//如果不改变数组中的元素，这里也可以写成for(auto col : row)</span></span><br><span class="line">		col = cnt;</span><br><span class="line">		++cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们结合之前已有的知识，将对二维数组的遍历方法总结如下，这当中涉及到许多关于指针和引用的知识点，有不清楚的地方可翻阅之前的内容。仔细体会以下方法的区别和联系，特别是范围for中auto关键字的类型推断。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//遍历二维数组</span></span><br><span class="line"><span class="keyword">int</span> ia[<span class="number">3</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;,&#123;<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>&#125;&#125;;</span><br><span class="line"><span class="comment">//Method 1：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++<span class="number">1</span>)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ia[i][j] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 2：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> (&amp;row)[<span class="number">4</span>] : ia)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> col : row)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; col &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 3：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;row : ia)  <span class="comment">//这里row被推断为int (&amp;row)[4]，因此该方法与Method 2等价</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> col : row)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; col &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 4：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> (*p)[<span class="number">4</span>] = ia; p != ia + <span class="number">3</span>; ++p)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> *q = *p; q != *p + <span class="number">4</span>; ++q)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 5：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> p = ia; p != ia + <span class="number">3</span>; ++p)  <span class="comment">//这里p被推断为int (*p)[4]，因此该方法与Method 4等价</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> q = *p; q != *p + <span class="number">4</span>; ++q)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 6：</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> p = begin(ia); p != end(ia); ++p)  <span class="comment">//使用begin，end</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">auto</span> q = begin(*p); q != end(*p); ++q)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 7：</span></span><br><span class="line"><span class="keyword">using</span> int_array = <span class="keyword">int</span>[<span class="number">4</span>];</span><br><span class="line"><span class="keyword">for</span>(int_array &amp;row : ia)  <span class="comment">//与Method 2等价</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> col : row)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; col &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Method 8：</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> int_array[<span class="number">4</span>];   <span class="comment">//等价于using int_array = int[4];</span></span><br><span class="line"><span class="keyword">for</span>(int_array *p = ia; p != ia + <span class="number">3</span>; ++p)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> *q = *p; q != *p + <span class="number">4</span>; ++q)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *q &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Method 7和Method 8中，<code>using int_array = int[4];</code>和<code>typedef int int_array[4];</code>是等价的声明。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2016/04/09/数据结构——树（一）/">
+        数据结构——树（一） →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/04/11/primer读书笔记（2）/" data-title="primer读书笔记（2）" data-url="https://github.com/CornFish98/CornFish98.github.io.git/2016/04/11/primer读书笔记（2）/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ZKY. All Rights Reserved.
+                </p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
