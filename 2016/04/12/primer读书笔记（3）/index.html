@@ -114,7 +114,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/C/" class="animsition-link">C++<small>(3)</small></a></li>
+				    <li><a href="/categories/C/" class="animsition-link">C++<small>(4)</small></a></li>
 				    
 				    <li><a href="/categories/Computer-Networking/" class="animsition-link">Computer Networking<small>(1)</small></a></li>
 				    
@@ -290,11 +290,16 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span>* p = &amp;d;</span><br><span class="line"><span class="keyword">double</span> *dp = <span class="keyword">static_cast</span>&lt;<span class="keyword">double</span>*&gt;(p);  <span class="comment">//必须确保转换后所得的类型就是指针所指的类型，否则将产生未定义的后果</span></span><br></pre></td></tr></table></figure>
 <p><strong>const_cast：</strong><br><code>const_cast</code>只能改变运算对象的底层const，回忆之前的内容，我们可以使用一个非常量的值来初始化一个常量，<code>const_cast</code>使得我们可以去掉某个对象的const性质，此时，编译器就不再组织我们对该对象进行写操作了，但只有在对象本身不是一个常量的情况下，使用强制类型转换获得写权限才是合法的行为，如果对象原本就是一个常量，再使用<code>const_cast</code>执行写操作就会产生未定义的后果。<code>const_cast</code>常常用于有函数重载的上下文中。</p>
 <p>只能使用<code>const_cast</code>改变表达式的常量属性，不能使用<code>const_cast</code>改变表达式的类型。</p>
+<h5 id="3-4-3-运算符优先级"><a href="#3-4-3-运算符优先级" class="headerlink" title="3.4.3 运算符优先级"></a>3.4.3 运算符优先级</h5><p>一图胜千言，这张图非常重要。（图中每一栏中的运算符优先级相同，不同栏运算符优先级从上向下一次递减）<br><img src="http://7xrobr.com1.z0.glb.clouddn.com/2016-04-12-C++ Primer 5th edition.jpg" alt="C++ Primer 5th edition"></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/04/12/primer读书笔记（4）/" style="float: left;">
+        ← primer读书笔记（4）
+    </a>
     
     
     <a class="pull-right" href="/2016/04/11/primer读书笔记（2）/">
